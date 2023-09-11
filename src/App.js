@@ -1,8 +1,16 @@
 import './App.css';
-import { SpinningCircles } from 'react-loading-icons'
+import { SpinningCircles } from 'react-loading-icons';
+import { ReactNavbar } from './NavBar';
+import { Leaderboard } from './Components/Leaderboard';
+import { Contact } from './Components/Contact';
 
 function App() {
 
+  const Home = () => <h1 className='text'>Welcome Fellow HeMan Punter!</h1>;
+  const ClubHistory = () => <h1 className='text'>Club History</h1>;
+  //const Contact = () => <h1 className='text'>Contact</h1>;
+
+  
   function hideLoadingDiv() {
     setTimeout(function () {
       document.getElementById('LOADING').classList.add('hidden');
@@ -41,26 +49,55 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+      <header id='WELCOME' className='Welcome-div'>
+        <div className='navbar'>
+          <ReactNavbar
+            color="#1a1a1a"
+            menu={[
+              { name: "HOME", to: "/", component: Home },
+              { name: "LEADERBOARD", to: "/leaderboard", component: Leaderboard },
+              { name: "CLUB HISTORY", to: "/clubhistory", component: ClubHistory },
+              { name: "CONTACT", to: "/contact", component: Contact },
+            ]}
+            social={[
+              {
+                name: "Facebook",
+                url: "https://www.facebook.com/messages/t/6561965867194356",
+                icon: ["fab", "facebook-f"],
+              },
+              {
+                name: "Sportsbet",
+                url: "http://sportsbet.com.au/",
+                icon: "https://pbs.twimg.com/profile_images/1693386181864812544/iqgEuLln_400x400.jpg",
+              },
+              {
+                name: "Twitter",
+                url: "https://twitter.com/BrentonTurnor",
+                icon: ["fab", "twitter"],
+              },
+            ]}
+            sticky
+          />
+        </div>
+      </header>
+      <div className="App-header">
 
         <span id="LOADING" className='Loading-div'>
           <div>
             Loading
           </div>
           <div className='Disappearingloading'>
-            <SpinningCircles fill='rgb(29, 133, 50)' style={{ marginLeft: '10px' }} />
+            <SpinningCircles fill='#fc6431' style={{ marginLeft: '10px' }} />
           </div>
         </span>
         <div id="PASSWORD" className='Password-div'>
           Password: <input className='Text-input' type='password' onKeyDown={enterEvent} />
         </div>
-        <div id="WELCOME" className='Welcome-div'>
-          Welcome Fellow HeMan Punter!
-        </div>
         <div id="INCORRECT" className='Incorrect-div'>
           Incorrect Password
         </div>
-      </header>
+      </div>
+
     </div>
   );
 }

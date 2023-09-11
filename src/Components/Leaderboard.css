@@ -1,0 +1,14 @@
+.Leaderboard-div {
+    display: flex;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(32px + 2vmin);
+    color: var(--secondaryText);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+}

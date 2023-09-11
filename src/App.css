@@ -1,19 +1,44 @@
+:root {
+  --primary: #1a1a1a;
+  --mainText: #fcfcfc;
+  --secondaryText: #fc6431;
+  --secondary: #868686;
+  --font: 'DM Sans', sans-serif;
+}
+
 .App {
   text-align: center;
+  background-color: var(--primary);
 }
 
 
 .App-header {
-  background-color: #000000;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(16px + 2vmin);
-  color: rgb(29, 133, 50);
-  font-family: 'Courier New', Courier, monospace;
+  color: var(--mainText);
+  font-family: 'DM Sans', sans-serif;
   font-weight: 600;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(16px + 2vmin);
+  color: var(--secondaryText);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+}
+
+.generalText {
+  color: var(--mainText);
+  display: inline-block;
+  font-family: var(--font);
 }
 
 .Loading-div {
@@ -34,23 +59,27 @@
 
 .Text-input {
   margin-left: 1rem;
-  background-color: #000000;
-  color: rgb(29, 133, 50);
+  background-color: white;
+  color: var(--secondaryText);
+  border-radius: 8px;
 }
 
 .Welcome-div{
   display: none;
 }
 
+.navbar {
+  background-color: "purple";
+  min-height: 100vh;
+  width: 100%;
+}
+
 .Incorrect-div{
   font-size: smaller;
   padding-top: 10px;
-  color: rgba(133, 19, 19, 0.767);
+  color: var(--secondaryText);
   display: none
 }
 
-@media screen and (max-width: 450px) {
-  .Welcome-div {
-    width: 250px
-  }
-}
+
+
