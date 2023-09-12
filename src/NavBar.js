@@ -56,6 +56,7 @@ export const ReactNavbar = ({ color, logo, menu, social, sticky }) => {
         color ? setBackground(color) : null;
         logo ? setLogoUrl(logo) : null;
         social ? setSocialIcon(social) : [];
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     useEffect(() => {
         window.addEventListener("resize", updateWidthAndHeight);
