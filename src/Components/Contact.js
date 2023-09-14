@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react';
 import "./Contact.css"
-import { useForm } from "react-hook-form";
 import { Button, Icon, Modal } from 'semantic-ui-react'
 
 
@@ -11,7 +10,7 @@ export const Contact = () => {
     //const [email, setEmail] = useState('');
     //const [message, setMessage] = useState('');
     //const [typeOfFeedback, setTypeOfFeedback] = useState('General');
-    const[ all, setAll ] = useState({ Name: '', Email: '', Message: '', TypeOfFeedback: '' });
+    //const[ all, setAll ] = useState({ Name: '', Email: '', Message: '', TypeOfFeedback: '' });
 
 
 
@@ -22,29 +21,23 @@ export const Contact = () => {
             showMsg: false
         });
     };
-
-    const { register, formState: { errors } } = useForm();
     
-    const onSubmit = (event) => {
+    // const onSubmit = (event) => {
         
-        fetch ( "/", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: encodeURI({'form-name': "contact", all})
-        })
-        .then(() => console.log("Form successfully submitted", all))
-        .catch((error) => alert(error));
+    //     fetch ( "/", {
+    //         method: "POST",
+    //         headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    //         body: encodeURI({'form-name': "contact", all})
+    //     })
+    //     .then(() => console.log("Form successfully submitted", all))
+    //     .catch((error) => alert(error));
 
-        event.preventDefault();
+    //     event.preventDefault();
 
-        contactForm.current.reset();
+    //     contactForm.current.reset();
 
-        setShowMsg(true);
-    }
-
-    const handleChange = (e) => {
-        setAll({ ...all, [e.target.name]: e.target.value });
-    }
+    //     setShowMsg(true);
+    // }
 
     return (
         <div className='ContactMain-div'>
@@ -59,20 +52,19 @@ export const Contact = () => {
                 </ul>
             </div>
             <div className='formOuter'>
-                <form name="contact" method="post" className='form' id="contactForm" onSubmit={onSubmit} ref={contactForm}>
+                <form name="contact" method="post" className='form' id="contactForm" ref={contactForm}>
                     <input type="hidden" name="form-name" value="contact" />
                     <div>
                         <div className='formLabels'>
                             <label htmlFor="TypeOfFeedback" className='formLabelText'>Type of feedback</label>
                         </div>
                         <div className='formInputs'>
-                            <select name="TypeOfFeedback" defaultValue={"General"} {...register("TypeOfFeedback")} className='formInputFieldType' onChange={handleChange}>
+                            <select name="TypeOfFeedback" defaultValue={"General"} className='formInputFieldType'>
                                 <option value="General">General</option>
                                 <option value="Suggestion">Suggestion</option>
                                 <option value="Complaint">Complaint</option>
                                 <option value="Other">Other</option>
                             </select>
-                            {errors.TypeOfFeedback && <div className='requiredFeild'>This field is required</div>}
                         </div>
                     </div>
                     <div>
@@ -80,19 +72,16 @@ export const Contact = () => {
                             <label htmlFor="Name" className='formLabelText'>Name*</label>
                         </div>
                         <div className='formInputs'>
-                            <input name="Name" placeholder='Name'{...register("Name", { required: true })} className='formInputField' onChange={handleChange}/>
+                            <input name="Name" placeholder='Name' className='formInputField'/>
                         </div>
-                        {errors.Name && <div className='requiredFeild'>This field is required</div>}
-
                     </div>
                     <div>
                         <div className='formLabels'>
                             <label htmlFor="Email" className='formLabelText'>Email Address*</label>
                         </div>
                         <div className='formInputs'>
-                            <input name="Email" placeholder='Email Address'{...register("Email", { required: true })} className='formInputField' onChange={handleChange}/>
+                            <input name="Email" placeholder='Email Address' className='formInputField'/>
                         </div>
-                        {errors.Email && <div className='requiredFeild'>This field is required</div>}
 
                     </div>
                     <div>
@@ -100,9 +89,8 @@ export const Contact = () => {
                             <label htmlFor="Message" className='formLabelText'>Message*</label>
                         </div>
                         <div className='formInputs'>
-                            <textarea name="Message" placeholder='....' {...register("Message", { required: true })} className='formInputFieldMessage' onChange={handleChange}/>
+                            <textarea name="Message" placeholder='....' className='formInputFieldMessage'/>
                         </div>
-                        {errors.Email && <div className='requiredFeild'>This field is required</div>}
 
                     </div>
                     <input type="submit" className='submitButton' />
