@@ -12,7 +12,11 @@ export const Contact = () => {
     const [typeOfFeedback, setTypeOfFeedback] = useState('General');
     //const[ all, setAll ] = useState({ Name: '', Email: '', Message: '', TypeOfFeedback: '' });
 
-
+    const encode = (data) => {
+        return Object.keys(data)
+          .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+      .join('&');
+      };
 
     const contactForm = useRef(null);
 
@@ -27,7 +31,7 @@ export const Contact = () => {
         fetch ( "/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: encodeURI({'form-name': "contact", 
+            body: encode({'form-name': "contact", 
             Name: name,
             Email: email,
             Message: message,
@@ -57,7 +61,7 @@ export const Contact = () => {
                 </ul>
             </div>
             <div className='formOuter'>
-                <form name="contact" method="post" className='form' id="contactForm" ref={contactForm} onSubmit={onSubmit}>
+                <form name="contact" method="post" className='form' id="contactForm" ref={contactForm} onSubmit={(e) => onSubmit(e)}>
                     <input type="hidden" name="form-name" value="contact" />
                     <div>
                         <div className='formLabels'>
