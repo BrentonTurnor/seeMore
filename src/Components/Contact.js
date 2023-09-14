@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import "./Contact.css"
 import { useForm } from "react-hook-form";
 import { Button, Icon, Modal } from 'semantic-ui-react'
@@ -8,18 +8,21 @@ export const Contact = () => {
 
     const [showMsg, setShowMsg] = useState(false);
 
+    const contactForm = useRef(null);
+
     function onActionClick(e, data) {
         this.setState({
             showMsg: false
         });
     };
 
-    const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => {
-        console.log(data);
+    const { register, formState: { errors } } = useForm();
+    const onSubmit = (event) => {
+        event.preventDefault();
 
-        var form = document.getElementById("contactForm");
-        form.reset();
+        console.log("Form Successfully Submitted");
+
+        contactForm.current.reset();
         setShowMsg(true);
     }
 
@@ -36,7 +39,7 @@ export const Contact = () => {
                 </ul>
             </div>
             <div className='formOuter'>
-                <form name="contact" onSubmit={handleSubmit(onSubmit)} method="post" className='form' id="contactForm">
+                <form name="contact" method="post" className='form' id="contactForm" onSubmit={onSubmit} ref={contactForm}>
                     <input type="hidden" name="form-name" value="contact" />
                     <div>
                         <div className='formLabels'>

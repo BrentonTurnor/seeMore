@@ -11,9 +11,17 @@
   background-color: var(--primary);
 }
 
+#PASSWORD {
+  line-height: normal;
+}
+
+#LOADING {
+  line-height: normal;
+}
+
 a:hover {
-  color: var(--secondaryText);
-  text-decoration: none;
+  color: var(--secondaryText) !important;
+  text-decoration: none !important;
 }
 
 
@@ -67,6 +75,7 @@ a:hover {
   background-color: white;
   color: var(--secondaryText);
   border-radius: 8px;
+  font-size: 16px;
 }
 
 .Welcome-div{

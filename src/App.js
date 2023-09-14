@@ -33,7 +33,6 @@ function App() {
       //console.log('Password entered');
       if (e.target.value === 'Punters') {
         console.log("Correct password")
-        console.log(e.target.value)
         showWelcome()
       }
       else {
