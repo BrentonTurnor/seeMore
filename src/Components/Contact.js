@@ -7,6 +7,13 @@ import { Button, Icon, Modal } from 'semantic-ui-react'
 export const Contact = () => {
 
     const [showMsg, setShowMsg] = useState(false);
+    //const [name, setName] = useState('');
+    //const [email, setEmail] = useState('');
+    //const [message, setMessage] = useState('');
+    //const [typeOfFeedback, setTypeOfFeedback] = useState('General');
+    const[ all, setAll ] = useState({ Name: '', Email: '', Message: '', TypeOfFeedback: '' });
+
+
 
     const contactForm = useRef(null);
 
@@ -17,13 +24,26 @@ export const Contact = () => {
     };
 
     const { register, formState: { errors } } = useForm();
+    
     const onSubmit = (event) => {
+        
+        fetch ( "/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: encodeURI({'form-name': "contact", all})
+        })
+        .then(() => console.log("Form successfully submitted", all))
+        .catch((error) => alert(error));
+
         event.preventDefault();
 
-        console.log("Form Successfully Submitted");
-
         contactForm.current.reset();
+
         setShowMsg(true);
+    }
+
+    const handleChange = (e) => {
+        setAll({ ...all, [e.target.name]: e.target.value });
     }
 
     return (
@@ -46,7 +66,7 @@ export const Contact = () => {
                             <label htmlFor="TypeOfFeedback" className='formLabelText'>Type of feedback</label>
                         </div>
                         <div className='formInputs'>
-                            <select name="TypeOfFeedback" defaultValue={"General"} {...register("TypeOfFeedback")} className='formInputFieldType' >
+                            <select name="TypeOfFeedback" defaultValue={"General"} {...register("TypeOfFeedback")} className='formInputFieldType' onChange={handleChange}>
                                 <option value="General">General</option>
                                 <option value="Suggestion">Suggestion</option>
                                 <option value="Complaint">Complaint</option>
@@ -60,7 +80,7 @@ export const Contact = () => {
                             <label htmlFor="Name" className='formLabelText'>Name*</label>
                         </div>
                         <div className='formInputs'>
-                            <input name="Name" placeholder='Name'{...register("Name", { required: true })} className='formInputField' />
+                            <input name="Name" placeholder='Name'{...register("Name", { required: true })} className='formInputField' onChange={handleChange}/>
                         </div>
                         {errors.Name && <div className='requiredFeild'>This field is required</div>}
 
@@ -70,7 +90,7 @@ export const Contact = () => {
                             <label htmlFor="Email" className='formLabelText'>Email Address*</label>
                         </div>
                         <div className='formInputs'>
-                            <input name="Email" placeholder='Email Address'{...register("Email", { required: true })} className='formInputField' />
+                            <input name="Email" placeholder='Email Address'{...register("Email", { required: true })} className='formInputField' onChange={handleChange}/>
                         </div>
                         {errors.Email && <div className='requiredFeild'>This field is required</div>}
 
@@ -80,7 +100,7 @@ export const Contact = () => {
                             <label htmlFor="Message" className='formLabelText'>Message*</label>
                         </div>
                         <div className='formInputs'>
-                            <textarea name="Message" placeholder='....' {...register("Message", { required: true })} className='formInputFieldMessage' />
+                            <textarea name="Message" placeholder='....' {...register("Message", { required: true })} className='formInputFieldMessage' onChange={handleChange}/>
                         </div>
                         {errors.Email && <div className='requiredFeild'>This field is required</div>}
 
