@@ -22,22 +22,22 @@ export const Contact = () => {
         });
     };
     
-    // const onSubmit = (event) => {
+    const onSubmit = (event) => {
         
-    //     fetch ( "/", {
-    //         method: "POST",
-    //         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    //         body: encodeURI({'form-name': "contact", all})
-    //     })
-    //     .then(() => console.log("Form successfully submitted", all))
-    //     .catch((error) => alert(error));
+        // fetch ( "/", {
+        //     method: "POST",
+        //     headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        //     body: encodeURI({'form-name': "contact", all})
+        // })
+        // .then(() => console.log("Form successfully submitted", all))
+        // .catch((error) => alert(error));
 
-    //     event.preventDefault();
+        event.preventDefault();
 
-    //     contactForm.current.reset();
+        contactForm.current.reset();
 
-    //     setShowMsg(true);
-    // }
+        setShowMsg(true);
+    }
 
     return (
         <div className='ContactMain-div'>
@@ -52,7 +52,7 @@ export const Contact = () => {
                 </ul>
             </div>
             <div className='formOuter'>
-                <form name="contact" method="post" className='form' id="contactForm" ref={contactForm}>
+                <form name="contact" method="post" className='form' id="contactForm" ref={contactForm} onSubmit={onSubmit}>
                     <input type="hidden" name="form-name" value="contact" />
                     <div>
                         <div className='formLabels'>
