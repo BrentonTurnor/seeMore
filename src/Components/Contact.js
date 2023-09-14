@@ -8,109 +8,99 @@ export const Contact = () => {
 
     const [showMsg, setShowMsg] = useState(false);
 
-    function onActionClick (e, data) {
+    function onActionClick(e, data) {
         this.setState({
-          showMsg: false
+            showMsg: false
         });
-      };
-
-    //var client = new postmark.ServerClient("40fa4696-54bc-47e1-809e-dbda1a1e082d");
+    };
 
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data);
 
         var form = document.getElementById("contactForm");
-            form.reset();
-            setShowMsg(true);
-        //const recipient = data.Email;
-        //const date = new Date();
-        //const sender = data.Name;
-        //const subject = "New contact form has been submitted - " + data.TypeOfFeedback + " - " + sender;
-        //const message = data.Message;
-}
+        form.reset();
+        setShowMsg(true);
+    }
 
-return (
-    <div className='ContactMain-div'>
-        <h1 className='text'>Contact Form</h1>
-        <div className='generalText'>
-            <div>All members have a voice. Please submit any feedback that you have for the club.</div>
-            <ul className='contactFormListItems'>
-                <li>This can be changes you want to see</li>
-                <li>Any suggestions you have for the club or windup</li>
-                <li>Complaints against the club or a member</li>
-                <li>Updates you want to see on this website</li>
-            </ul>
+    return (
+        <div className='ContactMain-div'>
+            <h1 className='text'>Contact Form</h1>
+            <div className='generalText'>
+                <div>All members have a voice. Please submit any feedback that you have for the club.</div>
+                <ul className='contactFormListItems'>
+                    <li>This can be changes you want to see</li>
+                    <li>Any suggestions you have for the club or windup</li>
+                    <li>Complaints against the club or a member</li>
+                    <li>Updates you want to see on this website</li>
+                </ul>
+            </div>
+            <div className='formOuter'>
+                <form name="contact" onSubmit={handleSubmit(onSubmit)} method="post" className='form' id="contactForm">
+                    <input type="hidden" name="form-name" value="contact" />
+                    <div>
+                        <div className='formLabels'>
+                            <label htmlFor="TypeOfFeedback" className='formLabelText'>Type of feedback</label>
+                        </div>
+                        <div className='formInputs'>
+                            <select name="TypeOfFeedback" defaultValue={"General"} {...register("TypeOfFeedback")} className='formInputFieldType' >
+                                <option value="General">General</option>
+                                <option value="Suggestion">Suggestion</option>
+                                <option value="Complaint">Complaint</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            {errors.TypeOfFeedback && <div className='requiredFeild'>This field is required</div>}
+                        </div>
+                    </div>
+                    <div>
+                        <div className='formLabels'>
+                            <label htmlFor="Name" className='formLabelText'>Name*</label>
+                        </div>
+                        <div className='formInputs'>
+                            <input name="Name" placeholder='Name'{...register("Name", { required: true })} className='formInputField' />
+                        </div>
+                        {errors.Name && <div className='requiredFeild'>This field is required</div>}
+
+                    </div>
+                    <div>
+                        <div className='formLabels'>
+                            <label htmlFor="Email" className='formLabelText'>Email Address*</label>
+                        </div>
+                        <div className='formInputs'>
+                            <input name="Email" placeholder='Email Address'{...register("Email", { required: true })} className='formInputField' />
+                        </div>
+                        {errors.Email && <div className='requiredFeild'>This field is required</div>}
+
+                    </div>
+                    <div>
+                        <div className='formLabels'>
+                            <label htmlFor="Message" className='formLabelText'>Message*</label>
+                        </div>
+                        <div className='formInputs'>
+                            <textarea name="Message" placeholder='....' {...register("Message", { required: true })} className='formInputFieldMessage' />
+                        </div>
+                        {errors.Email && <div className='requiredFeild'>This field is required</div>}
+
+                    </div>
+                    <input type="submit" className='submitButton' />
+                </form>
+            </div>
+            <Modal
+                open={showMsg}
+                onActionClick={onActionClick}
+            >
+                <Modal.Header>
+                    Form submitted successfully
+                </Modal.Header>
+                <Modal.Content>
+                    Thankyou for your feedback. We will get back to you as soon as possible.
+                </Modal.Content>
+                <Modal.Actions>
+                    <Button color='black' onClick={() => setShowMsg(false)}>
+                        <Icon name='remove' /> Close
+                    </Button>
+                </Modal.Actions>
+            </Modal>
         </div>
-        <div className='formOuter'>
-            <form name="contact" onSubmit={handleSubmit(onSubmit)} method="post" className='form' id="contactForm">
-            <input type="hidden" name="form-name" value="contact" />
-                <div>
-                    <div className='formLabels'>
-                        <label htmlFor="TypeOfFeedback" className='formLabelText'>Type of feedback</label>
-                    </div>
-                    <div className='formInputs'>
-                        <select name="TypeOfFeedback" defaultValue={"General"} {...register("TypeOfFeedback")} className='formInputFieldType' >
-                            <option value="General">General</option>
-                            <option value="Suggestion">Suggestion</option>
-                            <option value="Complaint">Complaint</option>
-                            <option value="Other">Other</option>
-                        </select>
-                        {errors.TypeOfFeedback && <div className='requiredFeild'>This field is required</div>}
-                    </div>
-                </div>
-                <div>
-                    <div className='formLabels'>
-                        <label htmlFor="Name" className='formLabelText'>Name*</label>
-                    </div>
-                    <div className='formInputs'>
-                        <input name="Name" placeholder='Name'{...register("Name", { required: true })} className='formInputField' />
-                    </div>
-                    {errors.Name && <div className='requiredFeild'>This field is required</div>}
-
-                </div>
-                <div>
-                    <div className='formLabels'>
-                        <label htmlFor="Email" className='formLabelText'>Email Address*</label>
-                    </div>
-                    <div className='formInputs'>
-                        <input name="Email" placeholder='Email Address'{...register("Email", { required: true })} className='formInputField' />
-                    </div>
-                    {errors.Email && <div className='requiredFeild'>This field is required</div>}
-
-                </div>
-                <div>
-                    <div className='formLabels'>
-                        <label htmlFor="Message" className='formLabelText'>Message*</label>
-                    </div>
-                    <div className='formInputs'>
-                        <textarea name="Message" placeholder='....' {...register("Message", { required: true })} className='formInputFieldMessage' />
-                    </div>
-                    {errors.Email && <div className='requiredFeild'>This field is required</div>}
-
-                </div>
-                <input type="submit" className='submitButton' />
-            </form>
-        </div>
-        <Modal
-        open={showMsg}
-        //header="Form Successfully Submitted"
-        //content="Thank you for your feedback. We will get back to you as soon as possible."
-        onActionClick={onActionClick}
-        //actions={[{ key: "done", content: "Done", positive: true }]}
-        >
-        <Modal.Header>
-            Form submitted successfully
-        </Modal.Header>
-        <Modal.Content>
-            Thankyou for your feedback. We will get back to you as soon as possible.
-        </Modal.Content>
-        <Modal.Actions>
-        <Button color='black' onClick={() => setShowMsg(false)}>
-          <Icon name='remove' /> Close
-        </Button>
-        </Modal.Actions>
-        </Modal>
-    </div>
-)
+    )
 }
