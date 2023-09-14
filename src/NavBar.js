@@ -89,7 +89,7 @@ export const ReactNavbar = ({ color, logo, menu, social, sticky }) => {
                                     from={{ height: "150px" }}
                                     to={{ height: "80px", background: background }}
                                 >
-                                    <div className="header">
+                                    <div className="nav-header">
                                         <div className="navLogo">
                                             <Link to="/">
                                                 <div className="logo-container">

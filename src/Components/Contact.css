@@ -8,7 +8,7 @@
     padding:20px;
     border: var(--secondary) 1px solid;
     border-radius: 25px;
-    width: 70%;
+    width: 90%;
     box-shadow: grey 2px 2px 8px;
     background-color: var(--mainText);
 }
@@ -28,7 +28,8 @@
 
 .formLabelText {
     font-size: 1.1rem;
-    padding-bottom: 0.2rem;
+    padding-bottom: 6px;
+    padding-top: 6px;
     font-family: 'DM Sans', sans-serif;
 }
 
@@ -51,7 +52,7 @@
 }
 
 .formInputField {
-    width: 90%;
+    width: 95%;
     font-family: var(--font);
     border-radius: 12px;
     border: 1px solid var(--secondary);
@@ -60,7 +61,7 @@
 }
 
 .formInputFieldMessage {
-    width: 90%;
+    width: 95%;
     height: 8rem;
     font-family: var(--font);
     border-radius: 12px;
