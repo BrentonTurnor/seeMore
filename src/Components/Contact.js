@@ -6,10 +6,10 @@ import { Button, Icon, Modal } from 'semantic-ui-react'
 export const Contact = () => {
 
     const [showMsg, setShowMsg] = useState(false);
-    //const [name, setName] = useState('');
-    //const [email, setEmail] = useState('');
-    //const [message, setMessage] = useState('');
-    //const [typeOfFeedback, setTypeOfFeedback] = useState('General');
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+    const [typeOfFeedback, setTypeOfFeedback] = useState('General');
     //const[ all, setAll ] = useState({ Name: '', Email: '', Message: '', TypeOfFeedback: '' });
 
 
@@ -24,13 +24,18 @@ export const Contact = () => {
     
     const onSubmit = (event) => {
         
-        // fetch ( "/", {
-        //     method: "POST",
-        //     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        //     body: encodeURI({'form-name': "contact", all})
-        // })
-        // .then(() => console.log("Form successfully submitted", all))
-        // .catch((error) => alert(error));
+        fetch ( "/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: encodeURI({'form-name': "contact", 
+            Name: name,
+            Email: email,
+            Message: message,
+            TypeOfFeedback: typeOfFeedback,
+            }),
+        })
+        .then(() => console.log("Form successfully submitted", "Name: ", name, "Email: ", email, "Message: ", message, "TypeOfFeedback: ", typeOfFeedback ))
+        .catch((error) => alert(error));
 
         event.preventDefault();
 
@@ -59,7 +64,7 @@ export const Contact = () => {
                             <label htmlFor="TypeOfFeedback" className='formLabelText'>Type of feedback</label>
                         </div>
                         <div className='formInputs'>
-                            <select name="TypeOfFeedback" defaultValue={"General"} className='formInputFieldType'>
+                            <select name="TypeOfFeedback" defaultValue={"General"} className='formInputFieldType' onChange={(e) => setTypeOfFeedback(e.target.value)}>
                                 <option value="General">General</option>
                                 <option value="Suggestion">Suggestion</option>
                                 <option value="Complaint">Complaint</option>
@@ -72,7 +77,7 @@ export const Contact = () => {
                             <label htmlFor="Name" className='formLabelText'>Name*</label>
                         </div>
                         <div className='formInputs'>
-                            <input name="Name" placeholder='Name' className='formInputField'/>
+                            <input name="Name" placeholder='Name' className='formInputField' onChange={(e) => setName(e.target.value)}/>
                         </div>
                     </div>
                     <div>
@@ -80,7 +85,7 @@ export const Contact = () => {
                             <label htmlFor="Email" className='formLabelText'>Email Address*</label>
                         </div>
                         <div className='formInputs'>
-                            <input name="Email" placeholder='Email Address' className='formInputField'/>
+                            <input name="Email" placeholder='Email Address' className='formInputField' onChange={(e) => setEmail(e.target.value)}/>
                         </div>
 
                     </div>
@@ -89,7 +94,7 @@ export const Contact = () => {
                             <label htmlFor="Message" className='formLabelText'>Message*</label>
                         </div>
                         <div className='formInputs'>
-                            <textarea name="Message" placeholder='....' className='formInputFieldMessage'/>
+                            <textarea name="Message" placeholder='....' className='formInputFieldMessage' onChange={(e) => setMessage(e.target.value)}/>
                         </div>
 
                     </div>
