@@ -11,6 +11,11 @@
   background-color: var(--primary);
 }
 
+a:hover {
+  color: var(--secondaryText);
+  text-decoration: none;
+}
+
 
 .App-header {
   min-height: 100vh;
