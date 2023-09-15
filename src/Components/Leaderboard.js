@@ -7,7 +7,7 @@ export const Leaderboard = () => {
 
     return (
         <div className='Leaderboard-div'>
-            <h1 className='text'>Leaderboard</h1>
+            <h1 className='text' id="text-header">Leaderboard</h1>
         </div>
     )
 }

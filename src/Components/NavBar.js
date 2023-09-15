@@ -56,7 +56,7 @@ export const ReactNavbar = ({ color, logo, menu, social, sticky }) => {
         color ? setBackground(color) : null;
         logo ? setLogoUrl(logo) : null;
         social ? setSocialIcon(social) : [];
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     useEffect(() => {
         window.addEventListener("resize", updateWidthAndHeight);
@@ -116,15 +116,16 @@ export const ReactNavbar = ({ color, logo, menu, social, sticky }) => {
                                         <div className='navLinks'>
                                             <ul>
                                                 {navLinks.map((link, i) => (
-                                                    <li key={i}>
-                                                        <NavLink
-                                                            exact
-                                                            to={link.to}
-                                                            activeClassName='home'
-                                                        >
-                                                            {link.name}
-                                                        </NavLink>
-                                                    </li>
+                                                    link.name === "" ? null :
+                                                        <li key={i}>
+                                                            <NavLink
+                                                                exact
+                                                                to={link.to}
+                                                                activeClassName='home'
+                                                            >
+                                                                {link.name}
+                                                            </NavLink>
+                                                        </li>
                                                 ))}
                                             </ul>
                                         </div>
@@ -133,7 +134,7 @@ export const ReactNavbar = ({ color, logo, menu, social, sticky }) => {
                                                 {socialIcon.map((icon, i) => (
                                                     <li key={i}>
                                                         <a target="_blank" without rel="noreferrer" href={icon.url}>
-                                                            {icon.name === "Sportsbet" ? <img src={icon.icon} alt="SportsBet Logo" className="navSocialImg"/> :
+                                                            {icon.name === "Sportsbet" ? <img src={icon.icon} alt="SportsBet Logo" className="navSocialImg" /> :
                                                                 <FontAwesomeIcon icon={icon.icon} />
                                                             }
                                                         </a>

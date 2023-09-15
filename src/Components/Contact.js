@@ -10,7 +10,6 @@ export const Contact = () => {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
     const [typeOfFeedback, setTypeOfFeedback] = useState('General');
-    //const[ all, setAll ] = useState({ Name: '', Email: '', Message: '', TypeOfFeedback: '' });
 
     const encode = (data) => {
         return Object.keys(data)
@@ -50,7 +49,7 @@ export const Contact = () => {
 
     return (
         <div className='ContactMain-div'>
-            <h1 className='text'>Contact Form</h1>
+            <h1 className='text' id="text-header">Contact Form</h1>
             <div className='generalText'>
                 <div>All members have a voice. Please submit any feedback that you have for the club.</div>
                 <ul className='contactFormListItems'>
