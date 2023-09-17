@@ -18,7 +18,6 @@
 
 .currentGroupsHeader {
     color: var(--secondaryText);
-    padding-bottom: 30px;
 }
 
 .members{
@@ -64,3 +63,40 @@
     cursor: default !important;
     height: 160px;
 }
+
+.currentGroupsText {
+    text-align: center;
+    padding-bottom: 10px;
+    color: var(--mainText);
+}
+
+.highlightedGroup {
+    background-color: var(--secondaryText);
+}
+
+@media screen and (max-width: 600px) {
+    .homeParagraph {
+        margin: 10px 30px;
+    }
+    
+    .homeMembersDiv {
+        margin: 10px 30px;
+    }
+
+    .memberPhoto {
+        width: 100px;
+        height: 100px;
+    }   
+
+    .currentGroupsList {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .currentMembersHeader {
+        margin-top: 20px !important;
+    }
+
+
+
+  }

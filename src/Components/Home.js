@@ -3,6 +3,61 @@ import { Card } from 'semantic-ui-react'
 
 export const Home = () => {
 
+    //Function to set up starting date of betting and then work out every 3 weeks from there. This sets who bets on what week.
+    var baselineTuesday = new Date();
+    
+    baselineTuesday.setMonth(3);
+    baselineTuesday.setDate(5);
+    baselineTuesday.setFullYear(2024);
+
+    //Test Date
+    baselineTuesday.setMonth(8);
+    baselineTuesday.setDate(12);
+    baselineTuesday.setFullYear(2023);
+
+    console.log(baselineTuesday)
+
+    var currentDate = new Date();
+
+    console.log(currentDate)
+
+    var diffInWeeks = GetDifferenceInWeeks(baselineTuesday, currentDate);
+
+    var choices = ["A", "B", "C"];
+
+    var choiceForThisWeek = choices[diffInWeeks % choices.length];
+    
+    console.log(choiceForThisWeek);
+
+    function GetDifferenceInWeeks(week1, week2) {
+        var diffInMs = currentDate - baselineTuesday;
+
+        var msPerDay = (1000 * 60 * 60 * 24);
+        var diffInDays = Math.floor(diffInMs / msPerDay);
+
+        var diffInWeeks = Math.floor(diffInDays / 7);
+        return diffInWeeks;
+    }
+
+    if (choiceForThisWeek === "A") {
+        console.log("It's Group 1's turn to bet")
+            setTimeout(function () {
+                document.getElementById("Group1").style.setProperty('background-color', 'var(--secondaryText)');
+            }, 100)
+        }
+    else if (choiceForThisWeek === "B") {
+        console.log("It's Group 2's turn to bet")
+            setTimeout(function () {
+                document.getElementById("Group2").style.setProperty('background-color', 'var(--secondaryText)');
+            }, 100)
+        }
+    else if (choiceForThisWeek === "C") {
+        console.log("It's Group 3's turn to bet")
+            setTimeout(function () {
+                document.getElementById("Group3").style.setProperty('background-color', 'var(--secondaryText)');
+            }, 100)
+        }
+
 
     return (
         <div className='Home-div'>
@@ -15,7 +70,7 @@ export const Home = () => {
                     The club is made up of 10 members, each member is required to pay $200 at the start of the season. This money is then invested into the club, with the goal of making a profit. Each member of the club bets("invests") $30 once ever three weeks. A roster is established at the start of the season to determine who bets on what week. Bets can be placed anytime during the week from Tuesday through to the following Monday.
                 </p>
                 <p className='generalText' id="homeInto">
-                    Foundation Members - <span className='memberNames'>Brenton, Spicer, Scott, Crompy, Ski and Blakey</span>
+                    Foundation Members - <span className='memberNames'>Brenton, Spicer, Scott, Crompy, Ski and Jamsey</span>
                 </p>
             </div>
             <div className='homeMembersDiv'>
@@ -75,24 +130,29 @@ export const Home = () => {
             </div>
             <div className='homeMembersDiv'>
                 <h2 className='currentGroupsHeader'>Current Betting Groups 2023</h2>
+                <p className='currentGroupsText'>  Current betting group highlighted</p>
                 <div className="currentGroups">
                     <div className='currentGroupsList'>
                         <Card
                             className='groupCard'
+                            id="Group1"
                             link
                             header='Group 1'
                             meta='Week 1'
                             description={[
+                                
                                 <div>Fake</div>,
                                 <div>Jamsey</div>,
                                 <div>Simmo</div>,
                                 <div>Kane</div>,
+                                
                             ]}
                         />
                     </div>
                     <div className='currentGroupsList'>
                         <Card
                             className='groupCard'
+                            id="Group2"
                             link
                             header='Group 2'
                             meta='Week 2'
@@ -106,6 +166,7 @@ export const Home = () => {
                     <div className='currentGroupsList'>
                         <Card
                             className='groupCard'
+                            id="Group3"
                             link
                             header='Group 3'
                             meta='Week 3'

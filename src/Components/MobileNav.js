@@ -30,7 +30,7 @@ const MobileNav = ({
   ));
   const handelExpand = () => {
     if (click === false) {
-      gsap.to(nav, 0.8, { height: 310, ease: Power3.easeInOut });
+      gsap.to(nav, 0.8, { height: 320, ease: Power3.easeInOut });
       setClick(true);
     } else {
       gsap.to(nav, 0.4, { height: 0, ease: Power3.easeInOut });
@@ -78,6 +78,7 @@ const MobileNav = ({
           >
             <ul>
               {navLinks.map((link, i) => (
+                  link.name === "" ? null :
                 <li key={i}>
                   <Link to={link.to} onClick={handleMinimize}>{link.name}</Link>
                 </li>

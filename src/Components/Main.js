@@ -14,13 +14,14 @@ export const Main = () => {
 
     function hideLoadingDiv() {
 
-        const localStored = localStorage.getItem('password')
+        const localStored = localStorage.getItem('password');
 
         if (localStored === 'Punters') {
             setTimeout(function () {
             document.getElementById('LOADING').classList.add('hidden');
-            document.getElementById('WELCOME').style.display = 'flex'
-            console.log("Found local stored password, skipping log in screen")
+            document.getElementById('WELCOME').style.display = 'flex';
+            console.log("Found local stored password, skipping log in screen");
+            document.getElementById('App-header').style.setProperty('min-height', 'auto');
             }, 300)
         }
         else {
@@ -33,8 +34,9 @@ export const Main = () => {
 
     function showWelcome() {
         document.getElementById('PASSWORD').style.setProperty('display', 'none', 'important');
-        document.getElementById('WELCOME').style.display = 'flex'
-        document.getElementById("INCORRECT").style.setProperty('display', 'none')
+        document.getElementById('WELCOME').style.display = 'flex';
+        document.getElementById("INCORRECT").style.setProperty('display', 'none');
+        document.getElementById('App-header').style.setProperty('min-height', 'auto');
     }
 
     function incorrectMessage() {
@@ -43,7 +45,6 @@ export const Main = () => {
 
     const enterEvent = (e) => {
         if (e.key === 'Enter') {
-            //console.log('Password entered');
             if (e.target.value === 'Punters') {
                 localStorage.setItem('password', 'Punters')
                 console.log("Correct password, Stored in local storage")
@@ -94,8 +95,7 @@ export const Main = () => {
                     />
                 </div>
             </header>
-            <div className="App-header">
-
+            <div className="App-header" id="App-header">
                 <span id="LOADING" className='Loading-div'>
                     <div>
                         Loading
