@@ -95,3 +95,8 @@
     display: none
   }
 
+@media screen and (max-width: 600px) {
+    .generalText {
+        margin: 0 10px
+    }
+}

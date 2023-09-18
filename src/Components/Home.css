@@ -22,6 +22,8 @@
 
 .members{
     color: var(--mainText);
+    text-align: center;
+    flex: calc(100%/5)
 }
 
 .memberPhoto {
@@ -97,6 +99,8 @@
         margin-top: 20px !important;
     }
 
-
+    .Home-div {
+        margin-top: 20px;
+    }
 
   }

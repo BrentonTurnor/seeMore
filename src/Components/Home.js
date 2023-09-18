@@ -1,3 +1,4 @@
+import Footer from './Footer';
 import './Home.css';
 import { Card } from 'semantic-ui-react'
 
@@ -70,7 +71,7 @@ export const Home = () => {
                     The club is made up of 10 members, each member is required to pay $200 at the start of the season. This money is then invested into the club, with the goal of making a profit. Each member of the club bets("invests") $30 once ever three weeks. A roster is established at the start of the season to determine who bets on what week. Bets can be placed anytime during the week from Tuesday through to the following Monday.
                 </p>
                 <p className='generalText' id="homeInto">
-                    Foundation Members - <span className='memberNames'>Brenton, Spicer, Scott, Crompy, Ski and Jamsey</span>
+                   Club Founding Members - <span className='memberNames'>Brenton, Spicer, Scott, Crompy, Ski and Jamsey</span>
                 </p>
             </div>
             <div className='homeMembersDiv'>
@@ -179,6 +180,7 @@ export const Home = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }
