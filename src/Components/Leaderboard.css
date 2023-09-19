@@ -9,5 +9,18 @@
 
 table th {
     font-weight: 600;
-    margin: 30px;
+}
+
+table thead tr th{
+    padding: 10px 20px ; 
+    text-decoration: underline;
+}
+
+.totalWinnings {
+    padding-top: 20px;
+    font-weight: 600;
+}
+
+table tbody tr :nth-child(2)::before {
+    content: "$ ";
 }

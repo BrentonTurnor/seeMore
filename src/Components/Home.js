@@ -1,4 +1,3 @@
-import Footer from './Footer';
 import './Home.css';
 import { Card } from 'semantic-ui-react'
 
@@ -180,7 +179,7 @@ export const Home = () => {
                     </div>
                 </div>
             </div>
-            <Footer />
+            
         </div>
     )
 }

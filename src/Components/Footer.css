@@ -1,4 +1,5 @@
 .footer {
+    background-color: var(--primary);
     color: var(--mainText);
     bottom: 0;
     left: 0;

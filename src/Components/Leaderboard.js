@@ -90,11 +90,11 @@ export const Leaderboard = () => {
                             </tr>
                         ))}
                     </tbody>
-                    <tbody>
+                    <tbody >
                         {totalWinnings.map((row, index) => (
-                            <tr key={index}>
+                            <tr key={index} >
                                 {Object.values(row).map((value) => (
-                                    <td key={value}>{value}</td>
+                                    <td key={value} className='totalWinnings'>{value}</td>
                                 ))}
                             </tr>
                         ))}
