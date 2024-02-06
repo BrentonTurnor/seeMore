@@ -12,7 +12,7 @@
     <img src="https://img.shields.io/badge/Javascript-yellow" />
     <img src="https://img.shields.io/badge/-React-blueviolet"/>
     <img src="https://img.shields.io/badge/-Node.js-yellowgreen" />
-    <img src="https://img.shields.io/netlify/:dd8bc879-fb1a-449f-aa34-6c561ab956b0" />
+    [![Netlify Status](https://api.netlify.com/api/v1/badges/dd8bc879-fb1a-449f-aa34-6c561ab956b0/deploy-status)](https://app.netlify.com/sites/heman-punters/deploys)
 </p>
 
 ## Description
@@ -50,7 +50,7 @@ Site can be accessed [HERE](https://heman-punters.netlify.app/)
 ## Screenshots
 
 Home Page
-<img src="client\public\Photos\site-screenshot.PNG" alt= "Screenshot of website homepage">
+<img src="public\Photos\site-screenshot.png" alt= "Screenshot of website homepage">
 
 ## Tests
 
