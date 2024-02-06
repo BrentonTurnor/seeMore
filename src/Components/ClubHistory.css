@@ -1,0 +1,31 @@
+.ClubHistoryTable {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+
+}
+
+.ClubHistoryTable table th {
+    font-weight: 600;
+}
+
+.ClubHistoryTable table thead tr th{
+    padding: 10px 20px ; 
+    text-decoration: underline;
+}
+
+.totalWinnings {
+    padding-top: 20px;
+    font-weight: 600;
+}
+
+.ClubHistoryTable table tbody tr :nth-child(2)::before {
+    content: "$ ";
+}
+
+#text-subheader {
+    font-size: 1.5em;
+}

@@ -2,14 +2,12 @@ import './Main.css';
 import { SpinningCircles } from 'react-loading-icons';
 import { ReactNavbar } from './NavBar';
 import { Leaderboard } from './Leaderboard';
+import { ClubHistory } from './ClubHistory';
 import { Contact } from './Contact';
 import { NoPage } from './NoPage';
 import { Home } from './Home';
 
 export const Main = () => {
-
-
-    const ClubHistory = () => <h1 className='text' id="text-header">Club History</h1>;
 
 
     function hideLoadingDiv() {

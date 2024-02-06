@@ -7,11 +7,11 @@
     margin: 0 auto;
 }
 
-table th {
+.LeaderboardTable table th {
     font-weight: 600;
 }
 
-table thead tr th{
+.LeaderboardTable table thead tr th{
     padding: 10px 20px ; 
     text-decoration: underline;
 }
@@ -21,6 +21,25 @@ table thead tr th{
     font-weight: 600;
 }
 
-table tbody tr :nth-child(2)::before {
+.LeaderboardTable table tbody tr :nth-child(2)::before {
     content: "$ ";
 }
+
+.StrikeTable {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.StrikeTable table th {
+    font-weight: 600;
+}
+
+.StrikeTable table thead tr th{
+    padding: 10px 20px ; 
+    text-decoration: underline;
+}
+
