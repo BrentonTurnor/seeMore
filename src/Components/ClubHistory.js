@@ -33,12 +33,12 @@ export const ClubHistory = () => {
             /* Define worksheet tab */
             var sheet_name_2023 = workbook.SheetNames[4];
             var sheet_name_2022 = workbook.SheetNames[3];
-            console.log(sheet_name_2023)
-            console.log(sheet_name_2022)
+            //console.log(sheet_name_2023)
+            //console.log(sheet_name_2022)
 
             /* Get 2023 worksheet content*/
             var worksheet = workbook.Sheets[sheet_name_2023];
-            console.log(XLSX.utils.sheet_to_json(worksheet, { raw: true }));
+            //console.log(XLSX.utils.sheet_to_json(worksheet, { raw: true }));
 
             const parsedData = XLSX.utils.sheet_to_json(worksheet, { raw: true });
 
@@ -48,21 +48,17 @@ export const ClubHistory = () => {
 
             filteredResults2.sort((a, b) => b.__EMPTY_3 - a.__EMPTY_3)
 
-            console.log(filteredResults2)
-
             setData(filteredResults2);
 
             const totalWinnings = parsedData.slice(54, 55)
 
             const totalWinnings2 = totalWinnings.map(({ __EMPTY_2, __EMPTY_3 }) => ({ __EMPTY_2, __EMPTY_3 }))
 
-            console.log(totalWinnings)
-
             setTotalWinnings(totalWinnings2)
 
             /* Get 2022 worksheet content*/
             var worksheet2022 = workbook.Sheets[sheet_name_2022];
-            console.log(XLSX.utils.sheet_to_json(worksheet2022, { raw: true }));
+            //console.log(XLSX.utils.sheet_to_json(worksheet2022, { raw: true }));
 
             const parsedData2022 = XLSX.utils.sheet_to_json(worksheet2022, { raw: true });
 
@@ -72,7 +68,9 @@ export const ClubHistory = () => {
 
             filteredResults2022.sort((a, b) => b.__EMPTY_3 - a.__EMPTY_3)
 
-            console.log(filteredResults2022)
+            filteredResults2022.forEach((element, index) => {
+                element.__EMPTY_3 = element.__EMPTY_3.toFixed(2)
+            })
 
             set2022Data(filteredResults2022);
 
@@ -80,15 +78,11 @@ export const ClubHistory = () => {
 
             const totalWinnings2022 = totalWinning2022.map(({ __EMPTY_2, __EMPTY_3 }) => ({ __EMPTY_2, __EMPTY_3 }))
 
-            console.log(totalWinnings2022[0].__EMPTY_3)
-
-            var totalWinnings2022Filtered = totalWinnings2022[0].__EMPTY_3.toFixed(2)
-
-            console.log(totalWinnings2022Filtered)
+            totalWinnings2022.forEach((element, index) => {
+                element.__EMPTY_3 = element.__EMPTY_3.toFixed(2)
+            })
 
             setTotalWinnings2022(totalWinnings2022)
-
-
 
         }
 
