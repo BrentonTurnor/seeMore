@@ -6,27 +6,32 @@ export const Home = () => {
     //Function to set up starting date of betting and then work out every 3 weeks from there. This sets who bets on what week.
     var baselineTuesday = new Date();
     
-    baselineTuesday.setMonth(3);
-    baselineTuesday.setDate(5);
+    baselineTuesday.setMonth(2);
+    baselineTuesday.setDate(12);
     baselineTuesday.setFullYear(2024);
 
     //Test Date
-    baselineTuesday.setMonth(8);
-    baselineTuesday.setDate(12);
-    baselineTuesday.setFullYear(2023);
+    //baselineTuesday.setMonth(1);
+    //baselineTuesday.setDate(20);
+    //baselineTuesday.setFullYear(2024);
 
-    console.log(baselineTuesday)
+    console.log("Comp start date: ", baselineTuesday)
 
     var currentDate = new Date();
 
-    console.log(currentDate)
+    console.log("Current date & time: ", currentDate)
 
     var diffInWeeks = GetDifferenceInWeeks(baselineTuesday, currentDate);
 
     var choices = ["A", "B", "C"];
 
-    var choiceForThisWeek = choices[diffInWeeks % choices.length];
-    
+    if (diffInWeeks < 0) {
+        var choiceForThisWeek = "All";
+    }
+    else {
+        choiceForThisWeek = choices[diffInWeeks % choices.length];
+    }
+
     console.log(choiceForThisWeek);
 
     function GetDifferenceInWeeks(week1, week2) {
@@ -36,6 +41,7 @@ export const Home = () => {
         var diffInDays = Math.floor(diffInMs / msPerDay);
 
         var diffInWeeks = Math.floor(diffInDays / 7);
+        console.log(diffInWeeks);
         return diffInWeeks;
     }
 
@@ -57,6 +63,14 @@ export const Home = () => {
                 document.getElementById("Group3").style.setProperty('background-color', 'var(--secondaryText)');
             }, 100)
         }
+    else {
+        console.log("It's everyones turn to bet")
+        setTimeout(function () {
+            document.getElementById("Group1").style.setProperty('background-color', 'var(--secondaryText)');
+            document.getElementById("Group2").style.setProperty('background-color', 'var(--secondaryText)');
+            document.getElementById("Group3").style.setProperty('background-color', 'var(--secondaryText)');
+        }, 100)
+    }
 
 
     return (
