@@ -143,7 +143,7 @@ export const Home = () => {
                 </div>
             </div>
             <div className='homeMembersDiv'>
-                <h2 className='currentGroupsHeader'>Current Betting Groups 2023</h2>
+                <h2 className='currentGroupsHeader'>Current Betting Groups 2024</h2>
                 <p className='currentGroupsText'>  Current betting group highlighted</p>
                 <div className="currentGroups">
                     <div className='currentGroupsList'>
