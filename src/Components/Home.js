@@ -7,7 +7,7 @@ export const Home = () => {
     var baselineTuesday = new Date();
     
     baselineTuesday.setMonth(2);
-    baselineTuesday.setDate(12);
+    baselineTuesday.setDate(19);
     baselineTuesday.setFullYear(2024);
 
     //Test Date

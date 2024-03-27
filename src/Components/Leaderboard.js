@@ -42,7 +42,7 @@ export const Leaderboard = () => {
 
             const parsedData = XLSX.utils.sheet_to_json(worksheet, { raw: true });
 
-            const filteredResults = parsedData.slice(42, 52)
+            const filteredResults = parsedData.slice(44, 54)
 
             const filteredResults2 = filteredResults.map(({ __EMPTY_2, __EMPTY_3 }) => ({ __EMPTY_2, __EMPTY_3 }))
 
@@ -57,7 +57,7 @@ export const Leaderboard = () => {
             setData(filteredResults2);
             setStrikeData(strikeResults);
 
-            const totalWinnings = parsedData.slice(52, 53)
+            const totalWinnings = parsedData.slice(54, 55)
 
             const totalWinnings2 = totalWinnings.map(({ __EMPTY_2, __EMPTY_3 }) => ({ __EMPTY_2, __EMPTY_3 }))
 

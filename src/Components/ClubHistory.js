@@ -58,7 +58,7 @@ export const ClubHistory = () => {
 
             /* Get 2022 worksheet content*/
             var worksheet2022 = workbook.Sheets[sheet_name_2022];
-            //console.log(XLSX.utils.sheet_to_json(worksheet2022, { raw: true }));
+            console.log(XLSX.utils.sheet_to_json(worksheet2022, { raw: true }));
 
             const parsedData2022 = XLSX.utils.sheet_to_json(worksheet2022, { raw: true });
 
