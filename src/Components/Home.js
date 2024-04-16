@@ -81,7 +81,7 @@ export const Home = () => {
                     HeMan Woman Haters Investment Club was established in 2018. When a group of mates decided it would be a good idea to start a betting competion between friends. This quickly turned into an "Investment Club" when they saw returns in the thousands. Since then the club has grown to 10 members and always looking for more contributers/members.
                 </p>
                 <p className='generalText' id="homeInto">
-                    The club is made up of 10 members, each member is required to pay $200 at the start of the season. This money is then invested into the club, with the goal of making a profit. Each member of the club bets("invests") $30 once ever three weeks. A roster is established at the start of the season to determine who bets on what week. Bets can be placed anytime during the week from Tuesday through to the following Monday.
+                    The club is made up of 10 members, each member is required to pay $200 at the start of the season. This money is then invested into the club, with the goal of making a profit. Each member of the club bets("invests") $25 once ever three weeks. A roster is established at the start of the season to determine who bets on what week. Bets can be placed anytime during the week from Thursday through to the following Tuesday.
                 </p>
                 <p className='generalText' id="homeInto">
                    Club Founding Members - <span className='memberNames'>Brenton, Spicer, Scott, Crompy, Ski and Jamsey</span>
@@ -103,7 +103,7 @@ export const Home = () => {
                     <div className='members'>
                         <img src="/Photos/Spicer.png" alt="Brendan Spicer" className='memberPhoto' />
                         <div className='memberName'>Spicer</div>
-                        <div className='memberTitle'>Disgraced Commissioner</div>
+                        <div className='memberTitle'>Former Disgraced Commissioner</div>
                     </div>
                     <div className='members'>
                         <img src="/Photos/Scott.png" alt="Scott Bamford" className='memberPhoto' />
@@ -123,7 +123,7 @@ export const Home = () => {
                     <div className='members'>
                         <img src="/Photos/Blakey.png" alt="Paul Blakey" className='memberPhoto' />
                         <div className='memberName'>Blakey</div>
-                        <div className='memberTitle'>Member</div>
+                        <div className='memberTitle'>Vocal Member</div>
                     </div>
                     <div className='members'>
                         <img src="/Photos/Simmo.png" alt="Simmo" className='memberPhoto' />
