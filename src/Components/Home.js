@@ -103,7 +103,7 @@ export const Home = () => {
                     <div className='members'>
                         <img src="/Photos/Spicer.png" alt="Brendan Spicer" className='memberPhoto' />
                         <div className='memberName'>Spicer</div>
-                        <div className='memberTitle'>Former Disgraced Commissioner</div>
+                        <div className='memberTitle'>Disgraced Former Commissioner</div>
                     </div>
                     <div className='members'>
                         <img src="/Photos/Scott.png" alt="Scott Bamford" className='memberPhoto' />
@@ -113,7 +113,7 @@ export const Home = () => {
                     <div className='members'>
                         <img src="/Photos/Crompy.png" alt="Beau Raffaele" className='memberPhoto' />
                         <div className='memberName'>Crompy</div>
-                        <div className='memberTitle'>Member</div>
+                        <div className='memberTitle'>One Season Wonder</div>
                     </div>
                     <div className='members'>
                         <img src="/Photos/Ski.png" alt="Daniel Milevski" className='memberPhoto' />
@@ -123,7 +123,7 @@ export const Home = () => {
                     <div className='members'>
                         <img src="/Photos/Blakey.png" alt="Paul Blakey" className='memberPhoto' />
                         <div className='memberName'>Blakey</div>
-                        <div className='memberTitle'>Vocal Member</div>
+                        <div className='memberTitle'>Bored with this group</div>
                     </div>
                     <div className='members'>
                         <img src="/Photos/Simmo.png" alt="Simmo" className='memberPhoto' />
@@ -138,7 +138,7 @@ export const Home = () => {
                     <div className='members'>
                         <img src="/Photos/Kane.png" alt="Kane Hornsey" className='memberPhoto' />
                         <div className='memberName'>Kane</div>
-                        <div className='memberTitle'>Member</div>
+                        <div className='memberTitle'>Harvey Norman - It's been 3 years with no interest</div>
                     </div>
                 </div>
             </div>
