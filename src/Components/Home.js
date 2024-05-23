@@ -118,7 +118,7 @@ export const Home = () => {
                     <div className='members'>
                         <img src="/Photos/Ski.png" alt="Daniel Milevski" className='memberPhoto' />
                         <div className='memberName'>Ski</div>
-                        <div className='memberTitle'>Member</div>
+                        <div className='memberTitle'>Only "Wins" in his personal account</div>
                     </div>
                     <div className='members'>
                         <img src="/Photos/Blakey.png" alt="Paul Blakey" className='memberPhoto' />
@@ -154,12 +154,10 @@ export const Home = () => {
                             header='Group 1'
                             meta='Week 1'
                             description={[
-                                
                                 <div>Fake</div>,
                                 <div>Jamsey</div>,
                                 <div>Simmo</div>,
                                 <div>Kane</div>,
-                                
                             ]}
                         />
                     </div>
