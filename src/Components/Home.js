@@ -108,7 +108,7 @@ export const Home = () => {
                     <div className='members'>
                         <img src="/Photos/Scott.png" alt="Scott Bamford" className='memberPhoto' />
                         <div className='memberName'>Scott</div>
-                        <div className='memberTitle'>Member</div>
+                        <div className='memberTitle'>Winner winner chicken dinner</div>
                     </div>
                     <div className='members'>
                         <img src="/Photos/Crompy.png" alt="Beau Raffaele" className='memberPhoto' />
