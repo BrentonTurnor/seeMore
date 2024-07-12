@@ -49,18 +49,24 @@ export const Home = () => {
         console.log("It's Group 1's turn to bet")
             setTimeout(function () {
                 document.getElementById("Group1").style.setProperty('background-color', 'var(--secondaryText)');
+                document.getElementById("Group2").style.setProperty('background-color', 'white');
+                document.getElementById("Group3").style.setProperty('background-color', 'white');
             }, 100)
         }
     else if (choiceForThisWeek === "B") {
         console.log("It's Group 2's turn to bet")
             setTimeout(function () {
                 document.getElementById("Group2").style.setProperty('background-color', 'var(--secondaryText)');
+                document.getElementById("Group1").style.setProperty('background-color', 'white');
+                document.getElementById("Group3").style.setProperty('background-color', 'white');
             }, 100)
         }
     else if (choiceForThisWeek === "C") {
         console.log("It's Group 3's turn to bet")
             setTimeout(function () {
                 document.getElementById("Group3").style.setProperty('background-color', 'var(--secondaryText)');
+                document.getElementById("Group1").style.setProperty('background-color', 'white');
+                document.getElementById("Group2").style.setProperty('background-color', 'white');
             }, 100)
         }
     else {
