@@ -58,7 +58,7 @@ export const ClubHistory = () => {
 
             /* Get 2022 worksheet content*/
             var worksheet2022 = workbook.Sheets[sheet_name_2022];
-            console.log(XLSX.utils.sheet_to_json(worksheet2022, { raw: true }));
+            //console.log(XLSX.utils.sheet_to_json(worksheet2022, { raw: true }));
 
             const parsedData2022 = XLSX.utils.sheet_to_json(worksheet2022, { raw: true });
 
@@ -94,63 +94,49 @@ export const ClubHistory = () => {
     return (
         <div className='ClubHistory-div'>
             <h1 className='text' id="text-header">Club History</h1>
-            <h2 className='text' id="text-subheader">2023 Season</h2>
-            <div className="ClubHistoryTable">
-                <table className='table'>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Winnings</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {data.map((row, index) => (
-                            <tr key={index}>
-                                {Object.values(row).map((value) => (
-                                    <td key={value}>{value}</td>
-                                ))}
-                            </tr>
-                        ))}
-                    </tbody>
-                    <tbody >
-                        {totalWinnings.map((row, index) => (
-                            <tr key={index} >
-                                {Object.values(row).map((value) => (
-                                    <td key={value} className='totalWinnings'>{value}</td>
-                                ))}
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
-            <h2 className='text' id="text-subheader">2022 Season</h2>
-            <div className="ClubHistoryTable">
-                <table className='table'>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Winnings</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {data2022.map((row, index) => (
-                            <tr key={index}>
-                                {Object.values(row).map((value) => (
-                                    <td key={value}>{value}</td>
-                                ))}
-                            </tr>
-                        ))}
-                    </tbody>
-                    <tbody >
-                        {totalWinnings2022.map((row, index) => (
-                            <tr key={index} >
-                                {Object.values(row).map((value) => (
-                                    <td key={value} className='totalWinnings'>{value}</td>
-                                ))}
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+            <div className='seasonsContainer'>
+                <div className='seasonsDiv' id="div2023">
+                    <h2 className='text-subheader' >2023 Season</h2>
+                    <p><p className='HistoryTitle'>First:</p>    Brendan Spicer</p>
+                    <p><p className='HistoryTitle'>Second:</p>   Daniel Milevski</p>
+                    <p><p className='HistoryTitle'>Third:</p>    Simon Capozzi</p>
+                    <p><p className='HistoryTitle'>Toilet:</p>   Kane Hornsey</p>
+                </div>
+                <div className='seasonsDiv' id="div2022">
+                    <h2 className='text-subheader' >2022 Season</h2>
+                    <p><p className='HistoryTitle'>First:</p>    Paul Blakey</p>
+                    <p><p className='HistoryTitle'>Second:</p>   Brenton Jaskola</p>
+                    <p><p className='HistoryTitle'>Third:</p>    Brenton Turnor</p>
+                    <p><p className='HistoryTitle'>Toilet:</p>   Brendan Spicer & Scott Bamford</p>
+                </div>
+                <div className='seasonsDiv' id="div2021">
+                    <h2 className='text-subheader' >2021 Season</h2>
+                    <p><p className='HistoryTitle'>First:</p>    Scott Bamford</p>
+                    <p><p className='HistoryTitle'>Second:</p>   Brenton Jaskola</p>
+                    <p><p className='HistoryTitle'>Third:</p>    Brenton Turnor</p>
+                    <p><p className='HistoryTitle'>Toilet:</p>   Brendan Spicer & Beau Raffaele</p>
+                </div>
+                <div className='seasonsDiv' id="div2020">
+                    <h2 className='text-subheader' >2020 Season</h2>
+                    <p><p className='HistoryTitle'>First:</p>    Brenton Turnor</p>
+                    <p><p className='HistoryTitle'>Second:</p>   Brendan Spicer</p>
+                    <p><p className='HistoryTitle'>Third:</p>    Scott Bamford</p>
+                    <p><p className='HistoryTitle'>Toilet:</p>   Kane Hornsey & Daniel Milevski</p>
+                </div>
+                <div className='seasonsDiv' id="div2019">
+                    <h2 className='text-subheader' >2019 Season</h2>
+                    <p><p className='HistoryTitle'>First:</p>    Beau Raffaele</p>
+                    <p><p className='HistoryTitle'>Second:</p>   Daniel Milevski</p>
+                    <p><p className='HistoryTitle'>Third:</p>    Scott Bamford</p>
+                    <p><p className='HistoryTitle'>Toilet:</p>   No Record</p>
+                </div>
+                <div className='seasonsDiv' id="div2018">
+                    <h2 className='text-subheader' >2018 Season</h2>
+                    <p><p className='HistoryTitle'>First:</p>    Beau Raffaele</p>
+                    <p><p className='HistoryTitle'>Second:</p>   No Record</p>
+                    <p><p className='HistoryTitle'>Third:</p>    No Record</p>
+                    <p><p className='HistoryTitle'>Toilet:</p>   No Record</p>
+                </div>
             </div>
         </div>
     )

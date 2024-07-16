@@ -1,3 +1,12 @@
+.ClubHistory-div {
+    padding-bottom: 4rem;
+}
+
+.seasonsContainer {
+    display: flex;
+    flex-direction: column;
+}
+
 .ClubHistoryTable {
     color: white;
     display: flex;
@@ -26,6 +35,49 @@
     content: "$ ";
 }
 
-#text-subheader {
+.text-subheader {
     font-size: 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: calc(16px + 2vmin);
+    color: var(--secondaryText);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
 }
+
+.HistoryTitle {
+    font-weight: 600;
+    display: inline-block;
+    padding-right: 4px;
+}
+
+.seasonsDiv{
+    padding: 1rem;
+}
+
+/* #div2023{
+    padding-top: 2rem;
+    align-self: baseline;
+    text-align: left;
+}
+
+#div2022{
+    align-self: flex-end;
+    text-align: right;
+}
+
+#div2021{
+    align-self: baseline;
+    text-align: left;
+}
+
+#div2020{
+    align-self: flex-end;
+    text-align: right;
+}
+
+#div2019{
+    align-self: start;
+    text-align: left;
+} */

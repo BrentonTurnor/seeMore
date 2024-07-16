@@ -23,6 +23,11 @@
     color: var(--secondaryText) !important;
     text-decoration: none !important;
   }
+
+  p {
+    color: var(--mainText);
+    font-family: var(--font);
+  }
   
   
   .App-header {
