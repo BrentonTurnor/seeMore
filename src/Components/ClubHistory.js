@@ -34,6 +34,7 @@ export const ClubHistory = () => {
             /* Define worksheet tab */
             var sheet_name_2023 = workbook.SheetNames[4];
             var sheet_name_2022 = workbook.SheetNames[3];
+
             //console.log(sheet_name_2023)
             //console.log(sheet_name_2022)
 
@@ -96,6 +97,13 @@ export const ClubHistory = () => {
         <div className='ClubHistory-div'>
             <h1 className='text' id="text-header">Club History</h1>
             <div className='seasonsContainer'>
+            <div className='seasonsDiv' id="div2024">
+                    <h2 className='text-subheader' >2024 Season</h2>
+                    <p><p className='HistoryTitle'>First:</p>    Scott Bamford</p>
+                    <p><p className='HistoryTitle'>Second:</p>   Paul Blakey</p>
+                    <p><p className='HistoryTitle'>Third:</p>    Daniel Milevski</p>
+                    <p><p className='HistoryTitle'>Toilet:</p>   Simon Capozzi</p>
+                </div>
                 <div className='seasonsDiv' id="div2023">
                     <h2 className='text-subheader' >2023 Season</h2>
                     <p><p className='HistoryTitle'>First:</p>    Brendan Spicer</p>

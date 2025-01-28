@@ -84,13 +84,13 @@ export const Home = () => {
             <h1 className='text' id="text-header">Welcome Fellow HeMan Punter!</h1>
             <div className='homeParagraph'>
                 <p className='generalText' id="homeInto">
-                    HeMan Woman Haters Investment Club was established in 2018. When a group of mates decided it would be a good idea to start a betting competion between friends. This quickly turned into an "Investment Club" when they saw returns in the thousands. Since then the club has grown to 10 members and always looking for more contributers/members.
+                    HeMan Woman Haters Investment Club was established in 2018. When a group of mates decided it would be a good idea to start a betting competion between friends. This quickly turned into an "Investment Club" when they saw returns in the thousands. Since then the club has grown to 12 members and always looking for more contributers/members.
                 </p>
                 <p className='generalText' id="homeInto">
-                    The club is made up of 10 members, each member is required to pay $200 at the start of the season. This money is then invested into the club, with the goal of making a profit. Each member of the club bets("invests") $25 once ever three weeks. A roster is established at the start of the season to determine who bets on what week. Bets can be placed anytime during the week from Thursday through to the following Tuesday.
+                    The club is made up of 12 members, each member is required to pay $200 at the start of the season. This money is then invested into the club, with the goal of making a profit. Each member of the club bets("invests") $25 once ever three weeks. A roster is established at the start of the season to determine who bets on what week. Bets can be placed anytime during the week from Thursday through to the following Tuesday.
                 </p>
                 <p className='generalText' id="homeInto">
-                   Club Founding Members - <span className='memberNames'>Brenton, Spicer, Scott, Crompy, Ski and Jamsey</span>
+                   Founding Members - <span className='memberNames'>Brenton, Spicer, Scott, Crompy, Ski and Jamsey</span>
                 </p>
             </div>
             <div className='homeMembersDiv'>
@@ -146,10 +146,20 @@ export const Home = () => {
                         <div className='memberName'>Kane</div>
                         <div className='memberTitle'>Harvey Norman - It's been 3 years with no interest</div>
                     </div>
+                    <div className='members'>
+                        <img src="/Photos/Cam.png" alt="Cameron Starkie" className='memberPhoto' />
+                        <div className='memberName'>Cam</div>
+                        <div className='memberTitle'>New Member</div>
+                    </div>
+                    <div className='members'>
+                        <img src="/Photos/Pano.png" alt="Christopher Pano" className='memberPhoto' />
+                        <div className='memberName'>Pano</div>
+                        <div className='memberTitle'>New Member</div>
+                    </div>
                 </div>
             </div>
             <div className='homeMembersDiv'>
-                <h2 className='currentGroupsHeader'>Current Betting Groups 2024</h2>
+                <h2 className='currentGroupsHeader'>Current Betting Groups 2025</h2>
                 <p className='currentGroupsText'>  Current betting group highlighted</p>
                 <div className="currentGroups">
                     <div className='currentGroupsList'>
@@ -160,10 +170,10 @@ export const Home = () => {
                             header='Group 1'
                             meta='Week 1'
                             description={[
-                                <div>Fake</div>,
-                                <div>Jamsey</div>,
-                                <div>Simmo</div>,
-                                <div>Kane</div>,
+                                <div>Cam</div>,
+                                <div>Moose</div>,
+                                <div>Pano</div>,
+                                <div>Ski</div>,
                             ]}
                         />
                     </div>
@@ -175,9 +185,10 @@ export const Home = () => {
                             header='Group 2'
                             meta='Week 2'
                             description={[
-                                <div>BT</div>,
-                                <div>Blakey</div>,
                                 <div>Scott</div>,
+                                <div>Crompy</div>,
+                                <div>Kane</div>,
+                                <div>BT</div>,
                             ]}
                         />
                     </div>
@@ -189,9 +200,10 @@ export const Home = () => {
                             header='Group 3'
                             meta='Week 3'
                             description={[
-                                <div>Crompy</div>,
+                                <div>Fake</div>,
                                 <div>Spicer</div>,
-                                <div>Ski</div>,
+                                <div>Simmo</div>,
+                                <div>Blakey</div>,
                             ]}
                         />
                     </div>

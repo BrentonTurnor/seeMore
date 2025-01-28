@@ -23,7 +23,7 @@
 .members{
     color: var(--mainText);
     text-align: center;
-    flex: calc(100%/5)
+    flex: calc(100%/4)
 }
 
 .memberPhoto {
