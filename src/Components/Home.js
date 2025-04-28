@@ -6,9 +6,9 @@ export const Home = () => {
     //Function to set up starting date of betting and then work out every 3 weeks from there. This sets who bets on what week.
     var baselineTuesday = new Date();
     
-    baselineTuesday.setMonth(2);
-    baselineTuesday.setDate(19);
-    baselineTuesday.setFullYear(2024);
+    baselineTuesday.setMonth(3);
+    baselineTuesday.setDate(11);
+    baselineTuesday.setFullYear(2025);
 
     //Test Date
     //baselineTuesday.setMonth(1);
