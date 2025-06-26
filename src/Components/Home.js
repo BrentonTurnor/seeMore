@@ -5,7 +5,7 @@ export const Home = () => {
 
     //Function to set up starting date of betting and then work out every 3 weeks from there. This sets who bets on what week.
     var baselineTuesday = new Date();
-    
+
     baselineTuesday.setMonth(2);
     baselineTuesday.setDate(14);
     baselineTuesday.setFullYear(2025);
@@ -47,28 +47,28 @@ export const Home = () => {
 
     if (choiceForThisWeek === "A") {
         console.log("It's Group 1's turn to bet")
-            setTimeout(function () {
-                document.getElementById("Group1").style.setProperty('background-color', 'var(--secondaryText)');
-                document.getElementById("Group2").style.setProperty('background-color', 'white');
-                document.getElementById("Group3").style.setProperty('background-color', 'white');
-            }, 100)
-        }
+        setTimeout(function () {
+            document.getElementById("Group1").style.setProperty('background-color', 'var(--secondaryText)');
+            document.getElementById("Group2").style.setProperty('background-color', 'white');
+            document.getElementById("Group3").style.setProperty('background-color', 'white');
+        }, 100)
+    }
     else if (choiceForThisWeek === "B") {
         console.log("It's Group 2's turn to bet")
-            setTimeout(function () {
-                document.getElementById("Group2").style.setProperty('background-color', 'var(--secondaryText)');
-                document.getElementById("Group1").style.setProperty('background-color', 'white');
-                document.getElementById("Group3").style.setProperty('background-color', 'white');
-            }, 100)
-        }
+        setTimeout(function () {
+            document.getElementById("Group2").style.setProperty('background-color', 'var(--secondaryText)');
+            document.getElementById("Group1").style.setProperty('background-color', 'white');
+            document.getElementById("Group3").style.setProperty('background-color', 'white');
+        }, 100)
+    }
     else if (choiceForThisWeek === "C") {
         console.log("It's Group 3's turn to bet")
-            setTimeout(function () {
-                document.getElementById("Group3").style.setProperty('background-color', 'var(--secondaryText)');
-                document.getElementById("Group1").style.setProperty('background-color', 'white');
-                document.getElementById("Group2").style.setProperty('background-color', 'white');
-            }, 100)
-        }
+        setTimeout(function () {
+            document.getElementById("Group3").style.setProperty('background-color', 'var(--secondaryText)');
+            document.getElementById("Group1").style.setProperty('background-color', 'white');
+            document.getElementById("Group2").style.setProperty('background-color', 'white');
+        }, 100)
+    }
     else {
         console.log("It's everyones turn to bet")
         setTimeout(function () {
@@ -90,7 +90,7 @@ export const Home = () => {
                     The club is made up of 12 members, each member is required to pay $200 at the start of the season. This money is then invested into the club, with the goal of making a profit. Each member of the club bets("invests") $25 once ever three weeks. A roster is established at the start of the season to determine who bets on what week. Bets can be placed anytime during the week from Thursday through to the following Tuesday.
                 </p>
                 <p className='generalText' id="homeInto">
-                   Founding Members - <span className='memberNames'>Brenton, Spicer, Scott, Crompy, Ski and Jamsey</span>
+                    Founding Members - <span className='memberNames'>Brenton, Spicer, Scott, Crompy, Ski and Jamsey</span>
                 </p>
             </div>
             <div className='homeMembersDiv'>
@@ -209,7 +209,7 @@ export const Home = () => {
                     </div>
                 </div>
             </div>
-            
+
         </div>
     )
 }
