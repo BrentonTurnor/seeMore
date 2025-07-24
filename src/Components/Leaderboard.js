@@ -44,7 +44,10 @@ export const Leaderboard = () => {
 
             const filteredResults = parsedData.slice(41, 53)
 
-            const filteredResults2 = filteredResults.map(({ __EMPTY_2, __EMPTY_3 }) => ({ __EMPTY_2, __EMPTY_3 }))
+            const filteredResults2 = filteredResults.map(({ __EMPTY_2, __EMPTY_3 }) => ({ 
+                __EMPTY_2, 
+                __EMPTY_3: typeof __EMPTY_3 === 'number' ? parseFloat(__EMPTY_3.toFixed(2)) : __EMPTY_3 
+            }))
 
             const strikeResults = filteredResults.map(({ __EMPTY_8, __EMPTY_9 }) => ({ __EMPTY_8, __EMPTY_9 }))
 
