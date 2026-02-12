@@ -81,7 +81,7 @@ export const Main = () => {
                             {
                                 name: "Sportsbet",
                                 url: "http://sportsbet.com.au/",
-                                icon: "https://pbs.twimg.com/profile_images/1693386181864812544/iqgEuLln_400x400.jpg",
+                                icon: "/Photos/SportsbetLogo.png",
                             },
                             {
                                 name: "Twitter",
