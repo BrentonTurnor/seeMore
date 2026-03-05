@@ -32,17 +32,17 @@ export const Leaderboard = () => {
 
             /* DO SOMETHING WITH workbook HERE */
             
-            var sheet_name_2025 = workbook.SheetNames[6];
+            var sheet_name_2026 = workbook.SheetNames[8];
             
-            console.log(sheet_name_2025)
+            console.log(sheet_name_2026)
             
             /* Get worksheet */
-            var worksheet = workbook.Sheets[sheet_name_2025];
+            var worksheet = workbook.Sheets[sheet_name_2026];
             console.log(XLSX.utils.sheet_to_json(worksheet, { raw: true }));
 
             const parsedData = XLSX.utils.sheet_to_json(worksheet, { raw: true });
 
-            const filteredResults = parsedData.slice(42, 54)
+            const filteredResults = parsedData.slice(40, 54)
 
             const filteredResults2 = filteredResults.map(({ __EMPTY_2, __EMPTY_3 }) => ({ 
                 __EMPTY_2, 
@@ -78,7 +78,7 @@ export const Leaderboard = () => {
     return (
         <div className='Leaderboard-div'>
             <h1 className='text' id="text-header">Leaderboard</h1>
-            <h2 className='text' id="text-subheader">2025 Season</h2>
+            <h2 className='text' id="text-subheader">2026 Season</h2>
             <div className="LeaderboardTable">
                 <table className='table'>
                     <thead>
@@ -107,7 +107,7 @@ export const Leaderboard = () => {
                     </tbody>
                 </table>
             </div>
-            <h2 className='text' id="text-subheader">2025 Strikes</h2>
+            <h2 className='text' id="text-subheader">2026 Strikes</h2>
             <div className="StrikeTable">
                 <table className='table'>
                     <thead>

@@ -168,7 +168,9 @@ export const Home = () => {
                 className="memberPhoto"
               />
               <div className="memberName">Crompy</div>
-              <div className="memberTitle">One Season Wonder. Due a big win</div>
+              <div className="memberTitle">
+                One Season Wonder. Due a big win
+              </div>
             </div>
             <div className="members">
               <img
@@ -226,13 +228,23 @@ export const Home = () => {
               <div className="memberName">Pano</div>
               <div className="memberTitle">Member</div>
             </div>
+            <div className="members">
+              <img
+                src="/Photos/Adam.png"
+                alt="Adam Baxter"
+                className="memberPhoto"
+              />
+              <div className="memberName">Adam</div>
+              <div className="memberTitle">New Member</div>
+            </div>
           </div>
         </div>
         <div className="homeMembersDiv">
           <h2 className="currentGroupsHeader">Current Betting Groups 2026</h2>
           <p className="currentGroupsText">
             {" "}
-            Betting will resume start of the 2026 season. Below are the new groups for the season.
+            Betting will resume start of the 2026 season. Below are the new
+            groups for the season.
           </p>
           <div className="currentGroups">
             <div className="currentGroupsList">
@@ -277,6 +289,7 @@ export const Home = () => {
                   <div>Cam</div>,
                   <div>Kane</div>,
                   <div>Moose</div>,
+                  <div>Adam</div>,
                 ]}
               />
             </div>
