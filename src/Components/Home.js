@@ -7,7 +7,7 @@ export const Home = () => {
     var baselineTuesday = new Date();
 
     baselineTuesday.setMonth(2);
-    baselineTuesday.setDate(14);
+    baselineTuesday.setDate(9);
     baselineTuesday.setFullYear(2026);
 
     //Test Date
@@ -27,7 +27,7 @@ export const Home = () => {
 
     var choices = ["A", "B", "C"];
 
-    if (diffInWeeks <= 0) {
+    if (diffInWeeks < 0) {
         var choiceForThisWeek = "All";
     }
     else {
@@ -92,11 +92,11 @@ export const Home = () => {
             group of mates decided it would be a good idea to start a betting
             competion between friends. This quickly turned into an "Investment
             Club" when they saw returns in the thousands. Since then the club
-            has grown to 12 members and always looking for more
+            has grown to 13 members and always looking for more
             contributers/members.
           </p>
           <p className="generalText" id="homeInto">
-            The club is made up of 12 members, each member is required to pay
+            The club is made up of 13 members, each member is required to pay
             $200 at the start of the season. This money is then invested into
             the club, with the goal of making a profit. Each member of the club
             bets("invests") $25 once ever three weeks. A roster is established
@@ -243,8 +243,7 @@ export const Home = () => {
           <h2 className="currentGroupsHeader">Current Betting Groups 2026</h2>
           <p className="currentGroupsText">
             {" "}
-            Betting will resume start of the 2026 season. Below are the new
-            groups for the season.
+            Highlighted group/s are the ones that are betting this week. Betting commences on Tuesday and runs through to the following Monday. Each group bets every three weeks.
           </p>
           <div className="currentGroups">
             <div className="currentGroupsList">
